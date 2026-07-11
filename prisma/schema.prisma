@@ -1,0 +1,82 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  MANAGER
+  STAFF
+}
+
+enum BookingStatus {
+  CONFIRMED
+  CANCELLED
+}
+
+model Admin {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String   @map("password_hash")
+  role         Role
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  @@map("admins")
+}
+
+model Passenger {
+  id           String    @id @default(uuid())
+  name         String
+  email        String    @unique
+  passwordHash String    @map("password_hash")
+  phone        String?
+  createdAt    DateTime  @default(now()) @map("created_at")
+  updatedAt    DateTime  @updatedAt @map("updated_at")
+
+  bookings Booking[]
+
+  @@map("passengers")
+}
+
+model Flight {
+  id             String   @id @default(uuid())
+  flightNumber   String   @map("flight_number")
+  airline        String
+  origin         String
+  destination    String
+  gate           String?
+  departureTime  DateTime @map("departure_time")
+  arrivalTime    DateTime @map("arrival_time")
+  totalSeats     Int      @map("total_seats")
+  availableSeats Int      @map("available_seats")
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  bookings Booking[]
+
+  @@index([origin, destination, departureTime], name: "idx_flights_route_departure")
+  @@index([flightNumber], name: "idx_flights_flight_number")
+  @@map("flights")
+}
+
+model Booking {
+  id          String        @id @default(uuid())
+  passengerId String        @map("passenger_id")
+  flightId    String        @map("flight_id")
+  seatNumber  Int           @map("seat_number")
+  status      BookingStatus @default(CONFIRMED)
+  bookedAt    DateTime      @default(now()) @map("booked_at")
+  cancelledAt DateTime?     @map("cancelled_at")
+
+  passenger Passenger @relation(fields: [passengerId], references: [id])
+  flight    Flight    @relation(fields: [flightId], references: [id])
+
+  @@index([passengerId, status], name: "idx_bookings_passenger_status")
+  @@index([flightId, status], name: "idx_bookings_flight_status")
+  @@index([flightId, seatNumber, status], name: "idx_bookings_flight_seat_status")
+  @@map("bookings")
+}

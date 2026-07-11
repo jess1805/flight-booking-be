@@ -1,0 +1,92 @@
+[
+  {
+    "id": "fb-001",
+    "flightNumber": "AI-203",
+    "airline": "Air India",
+    "travelDate": "2026-06-05",
+    "rating": 4,
+    "category": "food",
+    "comments": "The vegetarian meal on Flight AI-203 was fresh and well presented. Portion size was adequate for a short-haul flight. Would appreciate more beverage options during the June service."
+  },
+  {
+    "id": "fb-002",
+    "flightNumber": "AI-203",
+    "airline": "Air India",
+    "travelDate": "2026-06-18",
+    "rating": 2,
+    "category": "food",
+    "comments": "Food quality on AI-203 in mid-June was disappointing. The hot meal arrived lukewarm and the dessert option was unavailable. Cabin crew apologized but no alternative was offered."
+  },
+  {
+    "id": "fb-003",
+    "flightNumber": "AI-203",
+    "airline": "Air India",
+    "travelDate": "2026-06-22",
+    "rating": 3,
+    "category": "crew",
+    "comments": "Crew on AI-203 during June 2026 were polite but seemed understaffed. Boarding assistance for elderly passengers was delayed."
+  },
+  {
+    "id": "fb-004",
+    "flightNumber": "6E-441",
+    "airline": "IndiGo",
+    "travelDate": "2025-12-10",
+    "rating": 5,
+    "category": "check-in",
+    "comments": "December check-in experience was seamless. Self-service kiosks reduced queue time significantly."
+  },
+  {
+    "id": "fb-005",
+    "flightNumber": "6E-512",
+    "airline": "IndiGo",
+    "travelDate": "2025-12-22",
+    "rating": 2,
+    "category": "delay",
+    "comments": "Flight delayed by 90 minutes in late December with limited communication at the gate."
+  },
+  {
+    "id": "fb-006",
+    "flightNumber": "UK-871",
+    "airline": "Vistara",
+    "travelDate": "2026-07-03",
+    "rating": 4,
+    "category": "food",
+    "comments": "Food quality in early July was strong. The regional thali option had good flavor and the coffee service was prompt."
+  },
+  {
+    "id": "fb-007",
+    "flightNumber": "AI-118",
+    "airline": "Air India",
+    "travelDate": "2026-06-30",
+    "rating": 1,
+    "category": "baggage",
+    "comments": "Checked baggage arrived damaged after the June 30 flight. Claim process at the airport took over an hour."
+  },
+  {
+    "id": "fb-008",
+    "flightNumber": "AI-203",
+    "airline": "Air India",
+    "travelDate": "2026-07-08",
+    "rating": 3,
+    "category": "food",
+    "comments": "Between June and July the food menu changed, but quality remained inconsistent. Snack box was acceptable, main course lacked seasoning."
+  },
+  {
+    "id": "fb-009",
+    "flightNumber": "SG-304",
+    "airline": "SpiceJet",
+    "travelDate": "2025-12-15",
+    "rating": 4,
+    "category": "cleanliness",
+    "comments": "Aircraft cabin was clean and well maintained during December travel. Seats and tray tables were sanitized before boarding."
+  },
+  {
+    "id": "fb-010",
+    "flightNumber": "AI-203",
+    "airline": "Air India",
+    "travelDate": "2026-06-12",
+    "rating": 5,
+    "category": "entertainment",
+    "comments": "In-flight entertainment on AI-203 had a good movie selection for June travelers. Headset quality could be improved."
+  }
+]
